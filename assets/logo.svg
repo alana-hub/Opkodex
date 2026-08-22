@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
-  <title id="title">Opkodex</title>
-  <desc id="desc">Navy and blue medical technology mark</desc>
-  <rect width="128" height="128" rx="28" fill="#0B2545"/>
-  <circle cx="64" cy="64" r="40" fill="#0077B6"/>
-  <path d="M56 39h16v17h17v16H72v17H56V72H39V56h17z" fill="#fff"/>
-</svg>
