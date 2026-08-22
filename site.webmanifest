@@ -1,0 +1,15 @@
+{
+  "name": "Opkodex SmartCare Rwanda",
+  "short_name": "SmartCare Rwanda",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0B2545",
+  "theme_color": "#0B2545",
+  "icons": [
+    {
+      "src": "./assets/favicon.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}

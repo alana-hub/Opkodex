@@ -1,0 +1,14 @@
+{
+  "name": "opkodex-smartcare-rwanda",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Opkodex LTD SmartCare Rwanda production-oriented frontend prototype.",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "serve": "python -m http.server 8080"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

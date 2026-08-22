@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Find SmartCare Rwanda partner hospitals.">
+  <meta name="theme-color" content="#0B2545">
+  <title>Find Hospitals | SmartCare Rwanda</title>
+  <link rel="icon" href="./assets/favicon.png" type="image/png">
+  <link rel="icon" href="./assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/favicon.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="./index.html">
+      <img class="brand-mark" src="./assets/logo.svg" alt="Opkodex">
+      <span class="brand-copy"><strong>Opkodex LTD</strong><small>SmartCare Rwanda</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="./index.html">Home</a>
+      <a href="./index.html#about">About Us</a>
+      <a href="./hospitals.html">Find Hospitals</a>
+      <a href="./index.html#faq">FAQ</a>
+    </nav>
+    <button id="mobileMenuButton" class="mobile-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+  </div>
+  <nav id="mobileMenu" class="container mobile-nav">
+    <a href="./index.html">Home</a>
+    <a href="./index.html#about">About Us</a>
+    <a href="./hospitals.html">Find Hospitals</a>
+    <a href="./index.html#faq">FAQ</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" style="color:#7dd3fc">SmartCare Rwanda</span>
+      <h1>Select a Partner Hospital Near You</h1>
+      <p class="muted" style="max-width:720px;color:#dbeafe">Search participating facilities by name, location or service, then continue to hospital-specific registration.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:48px">
+    <div class="container">
+      <div id="nearbyHospital" aria-live="polite"></div>
+
+      <div class="filter-panel">
+        <div class="field">
+          <label for="hospitalSearch">Search hospitals</label>
+          <input id="hospitalSearch" type="search" autocomplete="off" placeholder="Try “Charité”, “Rubavu”, or “Pediatrics”">
+        </div>
+        <div class="field">
+          <label for="districtFilter">District</label>
+          <select id="districtFilter">
+            <option value="all">All Districts</option>
+            <option value="Rubavu">Rubavu</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="search-results">
+        <h2 style="margin:0;color:var(--navy)">Partner Hospitals</h2>
+        <span id="resultsCount" class="muted">0 partner hospitals found</span>
+      </div>
+
+      <div id="hospitalGrid" class="hospital-grid"></div>
+
+      <div id="noHospitals" class="hidden" style="text-align:center;padding:64px 0">
+        <div style="font-size:3rem">🏥</div>
+        <h2 style="color:var(--navy)">No hospitals found</h2>
+        <p class="muted">Try another hospital name, service or district.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">What happens next?</span>
+        <h2>From hospital selection to visit confirmation.</h2>
+      </div>
+      <div class="grid-4">
+        <article class="info-card"><div class="info-icon">1</div><h3>Select</h3><p class="muted">Choose your preferred partner hospital.</p></article>
+        <article class="info-card"><div class="info-icon">2</div><h3>Register</h3><p class="muted">Complete your patient and visit information.</p></article>
+        <article class="info-card"><div class="info-icon">3</div><h3>Verify</h3><p class="muted">The facility reviews the request.</p></article>
+        <article class="info-card"><div class="info-icon">4</div><h3>Visit</h3><p class="muted">Arrive with your digital booking reference.</p></article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:0;margin-top:0">
+      © 2026 Opkodex LTD · TIN: 156712643 · Rubavu, Rwanda · +250 788 342 020 · <a href="./privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="./dist/app.js"></script>
+</body>
+</html>

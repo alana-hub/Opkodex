@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SmartCare Rwanda patient pre-registration.">
+  <meta name="theme-color" content="#0B2545">
+  <title>Patient Registration | SmartCare Rwanda</title>
+  <link rel="icon" href="./assets/favicon.png" type="image/png">
+  <link rel="icon" href="./assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/favicon.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="./index.html">
+      <img class="brand-mark" src="./assets/logo.svg" alt="Opkodex">
+      <span class="brand-copy"><strong>Opkodex LTD</strong><small>SmartCare Rwanda</small></span>
+    </a>
+    <a href="./hospitals.html" style="color:#dbeafe">← Change Hospital</a>
+  </div>
+</header>
+
+<main class="section">
+  <div class="form-shell">
+    <section class="hospital-banner">
+      <span class="eyebrow" style="color:#7dd3fc">Registering for Visit at</span>
+      <h1 id="selectedHospitalName">Loading hospital…</h1>
+      <p id="selectedHospitalLocation" style="color:#c7d8ea;margin:0">Loading location…</p>
+      <p id="selectedHospitalServices" style="color:#c7d8ea;margin:8px 0 0"></p>
+    </section>
+
+    <div class="registration-notice">
+      <strong>What happens after you submit?</strong>
+      <p style="margin:6px 0 0;color:var(--muted)">
+        In the intended workflow, an automated confirmation is prepared and the Opkode X Helpdesk follows up to verify the visit details.
+      </p>
+    </div>
+
+    <div id="formMessage" class="hidden" role="status" aria-live="polite"></div>
+
+    <form id="registrationForm" novalidate>
+      <section class="form-section">
+        <header class="form-section__header">
+          <span class="eyebrow">SECTION A</span>
+          <h2>Primary Sponsor / Parent Information</h2>
+        </header>
+        <div class="form-section__body">
+          <div class="field"><label for="fullName">Full Legal Name *</label><input id="fullName" name="fullName" autocomplete="name" required></div>
+          <div class="field"><label for="nin">National ID / NIN *</label><input id="nin" name="nin" inputmode="numeric" maxlength="16" autocomplete="off" required><span class="field-help">Exactly 16 digits.</span></div>
+          <div class="field"><label for="dob">Date of Birth *</label><input id="dob" name="dob" type="date" required></div>
+          <div class="field"><label for="occupation">Occupation</label><input id="occupation" name="occupation" placeholder="e.g. Teacher, student, business"></div>
+          <div class="field"><label for="phone">Phone Number *</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+250 7XX XXX XXX" required><span class="field-help">Used for support/verification contact.</span></div>
+          <div class="field"><label for="email">Email Address *</label><input id="email" name="email" type="email" autocomplete="email" required><span class="field-help">Used for digital confirmation.</span></div>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <header class="form-section__header">
+          <span class="eyebrow">SECTION B</span>
+          <h2>Residential Address</h2>
+        </header>
+        <div class="form-section__body">
+          <div class="field"><label for="province">Province *</label><select id="province" name="province" required><option value="">Select province</option><option>Western Province</option><option>Kigali City</option><option>Northern Province</option><option>Southern Province</option><option>Eastern Province</option></select></div>
+          <div class="field"><label for="district">District *</label><select id="district" name="district" required><option value="">Select district</option></select><span class="field-help">Partner location lists are currently enabled for Rubavu.</span></div>
+          <div class="field"><label for="sector">Sector *</label><select id="sector" name="sector" required><option value="">Select sector</option></select></div>
+          <div class="field"><label for="cell">Cell *</label><select id="cell" name="cell" required><option value="">Select cell</option></select></div>
+          <div class="field"><label for="village">Village *</label><select id="village" name="village" required><option value="">Select village</option></select></div>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <header class="form-section__header">
+          <span class="eyebrow">SECTION C</span>
+          <h2>Dependent & Insurance Information</h2>
+        </header>
+        <div class="form-section__body">
+          <div class="field"><label for="dependentName">Beneficiary / Child Name</label><input id="dependentName" name="dependentName" placeholder="Optional"></div>
+          <div class="field"><label for="relationship">Relationship</label><select id="relationship" name="relationship"><option value="">Select relationship</option><option value="child">Child</option><option value="spouse">Spouse</option><option value="dependent">Other dependent</option></select></div>
+          <div class="field"><label for="insuranceProvider">Insurance Provider *</label><select id="insuranceProvider" name="insuranceProvider" required><option value="">Select provider</option><option>Mutuelle de Santé (CBHI)</option><option>RSSB / RAMA</option><option>Eden Care</option><option>Sanlam</option><option>UAP</option><option>Radiant</option><option>Cash / Self-Pay</option></select></div>
+          <div class="field"><label for="policyId">Policy / Card ID *</label><input id="policyId" name="policyId" required></div>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <header class="form-section__header">
+          <span class="eyebrow">SECTION D</span>
+          <h2>Document Uploads</h2>
+          <p class="muted" style="margin:7px 0 0">JPG, PNG or PDF. Maximum 5 MB per document.</p>
+        </header>
+        <div class="form-section__body">
+          <div class="field"><label for="idDocument">National ID / Identification *</label><input id="idDocument" name="idDocument" type="file" accept=".jpg,.jpeg,.png,.pdf" required><span id="idDocumentPreview" class="file-preview"></span></div>
+          <div class="field"><label for="insuranceDocument">Insurance Card / Coverage Proof *</label><input id="insuranceDocument" name="insuranceDocument" type="file" accept=".jpg,.jpeg,.png,.pdf" required><span id="insuranceDocumentPreview" class="file-preview"></span></div>
+          <div class="checkbox-row"><input id="consent" type="checkbox" required><label for="consent"><strong>I understand the registration workflow.</strong><br><span class="field-help">This prototype collects the information needed to demonstrate the registration flow. A real deployment should process patient information through a secured, access-controlled backend.</span></label></div>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <header class="form-section__header">
+          <span class="eyebrow">SECTION E</span>
+          <h2>Visit Schedule</h2>
+        </header>
+        <div class="form-section__body">
+          <div class="field"><label for="visitDate">Preferred Visit Date *</label><input id="visitDate" name="visitDate" type="date" required></div>
+          <div class="field"><label for="department">Department *</label><select id="department" name="department" required><option value="">Select department</option><option>General Consultation</option><option>Pediatrics</option><option>Maternity</option><option>Laboratory</option><option>Emergency Care</option></select></div>
+        </div>
+      </section>
+
+      <div class="form-actions">
+        <a href="./hospitals.html" class="button" style="background:white;border:1px solid var(--line)">Change Hospital</a>
+        <button id="submitButton" class="button button--primary" type="submit">Submit Registration</button>
+      </div>
+    </form>
+
+    <section id="successPanel" class="success-panel hidden" aria-live="polite">
+      <span class="eyebrow">Registration received</span>
+      <h1 style="color:var(--navy);margin:10px 0">Your SmartCare registration is ready.</h1>
+      <p class="muted">Your request was captured for the prototype workflow.</p>
+      <div class="reference" id="successReference">SC-XXXXXXXX</div>
+
+      <div class="summary-grid">
+        <div class="summary-item"><small>Hospital</small><strong id="successHospital">—</strong></div>
+        <div class="summary-item"><small>Visit date</small><strong id="successVisitDate">—</strong></div>
+        <div class="summary-item"><small>Department</small><strong id="successDepartment">—</strong></div>
+      </div>
+
+      <p class="muted"><strong>Next steps:</strong> In a full deployment, a confirmation message would be sent and the Opkode X Helpdesk would follow up for verification.</p>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px">
+        <a class="button button--primary" href="./index.html">Back to Home</a>
+        <a class="button" style="background:#eef6fb;color:var(--navy)" href="./hospitals.html">Find Another Hospital</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:0;margin-top:0">
+      © 2026 Opkodex LTD · TIN: 156712643 · Rubavu, Rwanda · +250 788 342 020 · <a href="./privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="./dist/app.js"></script>
+</body>
+</html>
