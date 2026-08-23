@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Dark Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="100%" stop-color="#050810" />
+    </linearGradient>
+
+    <!-- Electric Cyan Gradient -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#4FACFE" />
+    </linearGradient>
+
+    <!-- Neon Emerald/Green Gradient -->
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00FF87" />
+      <stop offset="100%" stop-color="#60EFFF" />
+    </linearGradient>
+
+    <!-- Subtle Outer Ring Gradient -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+
+    <!-- Core Glow Effect -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Base (Rounded Square for App Icon/Avatar) -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+  <rect x="2" y="2" width="508" height="508" rx="110" fill="none" stroke="url(#borderGrad)" stroke-width="4" />
+
+  <!-- LOGO MARK (CENTERED ICON) -->
+  <g transform="translate(256, 256)">
+    <!-- Outer Hexagonal 'O' Frame -->
+    <path d="M 0,-180 L 155,-90 L 155,90 L 0,180 L -155,90 L -155,-90 Z" 
+          fill="none" 
+          stroke="url(#cyanGrad)" 
+          stroke-width="22" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+
+    <!-- Left Code Bracket '<' (Forming X Left) -->
+    <path d="M -40,-55 L -95,0 L -40,55" 
+          fill="none" 
+          stroke="url(#greenGrad)" 
+          stroke-width="20" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+
+    <!-- Right Code Bracket '>' (Forming X Right) -->
+    <path d="M 40,-55 L 95,0 L 40,55" 
+          fill="none" 
+          stroke="url(#greenGrad)" 
+          stroke-width="20" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+
+    <!-- Center Slash '/' -->
+    <line x1="22" y1="-70" x2="-22" y2="70" 
+          stroke="url(#cyanGrad)" 
+          stroke-width="18" 
+          stroke-linecap="round"/>
+
+    <!-- Glowing Core Center Node -->
+    <circle cx="0" cy="0" r="10" fill="#00FF87" filter="url(#glow)" />
+  </g>
+</svg>
